@@ -14,24 +14,31 @@
 	var strToGuess = "madonna";
 	var guesses = [];
 
-	function printWord(){
-        //alert(event.key);
-		guesses.push(event.key);
 
-		var str = "";
+        function printWord(){
+            //alert(event.key);
+            guesses.push(event.key);
 
-		for (var i=0; i<strToGuess.length; i++){
-			if (guesses.includes(strToGuess[i])){
-				str += strToGuess[i];
-			}else {
-				str += "_";
-			}
-		}
-		
-		document.querySelector('p').innerText = str;
-	}
+            var str = "";
+            var maxNumGuesses = 9;
+            var numGuesses = 0;
+            var numGuessesRemaining = maxNumGuesses;
 
-	document.onkeypress = printWord;
+            for (var i=0; i<strToGuess.length; i++){
+                if (guesses.includes(strToGuess[i])){
+                    str += strToGuess[i];
+                }else {
+                    str += "_";
+
+                }
+                numGuesses = numGuesses + 1;
+                numGuessesRemaining = maxNumGuesses - numGuesses;
+                document.write("Number of guesses remaining = " + numGuessesRemaining );
+            }            
+            document.querySelector('p').innerText = str; 
+        }
+
+        document.onkeypress = printWord;
 
 </script>  
       <section>
