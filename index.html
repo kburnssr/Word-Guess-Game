@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>The Word Guessing Game</title>
-    <link rel="stylesheet" type="text/css" href="assets/style.css"/>
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css"/>
 <body>
     <header>
             Word Guessing Game
@@ -13,16 +13,14 @@
 <script type="text/javascript">    
 	var strToGuess = "madonna";
 	var guesses = [];
-
-
+    var maxNumGuesses = 9;
+    var numGuesses = 0;
         function printWord(){
             //alert(event.key);
             guesses.push(event.key);
 
             var str = "";
-            var maxNumGuesses = 9;
-            var numGuesses = 0;
-            var numGuessesRemaining = maxNumGuesses;
+
 
             for (var i=0; i<strToGuess.length; i++){
                 if (guesses.includes(strToGuess[i])){
@@ -31,15 +29,18 @@
                     str += "_";
 
                 }
-                numGuesses = numGuesses + 1;
-                numGuessesRemaining = maxNumGuesses - numGuesses;
-                document.write("Number of guesses remaining = " + numGuessesRemaining );
+ 
             }            
             document.querySelector('p').innerText = str; 
         }
 
-        document.onkeypress = printWord;
 
+        for (var j=0; j<maxNumGuesses; j++){
+            console.log(numGuesses);
+            document.onkeypress = printWord;
+            numGuessesRemaining = maxNumGuesses - numGuesses;
+            console.log("Number of guesses remaining = " + numGuessesRemaining, "<br />" );
+        }
 </script>  
       <section>
         <div>
