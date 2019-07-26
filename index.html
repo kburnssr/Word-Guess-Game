@@ -1,57 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>The Word Guessing Game</title>
-    <link rel="stylesheet" type="text/css" href="./assets/css/style.css"/>
+    <title>Word-Guess-Game</title>
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+</head>
+
 <body>
-    <header>
-            Word Guessing Game
-    </header>
-    <p></p> 
-<script type="text/javascript">    
-	var strToGuess = "madonna";
-	var guesses = [];
-    var maxNumGuesses = 9;
-    var numGuesses = 0;
-        function printWord(){
-            //alert(event.key);
-            guesses.push(event.key);
+<div id="background"></div>
+<div id="selection">
+Illegal Alein
+</div>
+<div id="box1">
+</div>
+<div id="box2">
+    <div id="subbox1"><i>Press any key to get started</div>
+  
+    <div id="wins"><i>Wins:<span id="numwin"></span></i>
+    </div>
+    <p id="subbox2">
+        Current Word
+    </p>
+    <div id="currentword">
 
-            var str = "";
-
-
-            for (var i=0; i<strToGuess.length; i++){
-                if (guesses.includes(strToGuess[i])){
-                    str += strToGuess[i];
-                }else {
-                    str += "_";
-
-                }
- 
-            }            
-            document.querySelector('p').innerText = str; 
-        }
-
-
-        for (var j=0; j<maxNumGuesses; j++){
-            console.log(numGuesses);
-            document.onkeypress = printWord;
-            numGuessesRemaining = maxNumGuesses - numGuesses;
-            console.log("Number of guesses remaining = " + numGuessesRemaining, "<br />" );
-        }
-</script>  
-      <section>
-        <div>
-        <h1></h1>
-         
-        </div>
-    </section>
-
-        <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    </div>
+    <p>
+        Number of Guesses Remaining
+    </p>
+    <div id="numberofguesses">
+    </div>
+    <p>
+        <i>Letters already guessed</i>
+    </p>
+    <div id="lettersalreadyguessed"></div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="assets/javascript/game.js">
+</script>
 
 </body>
+
 </html>
