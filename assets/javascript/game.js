@@ -1,20 +1,20 @@
 (function(){
 	var numwins = 0;
 	var songs = [{
-		"title": "Abbey Road",
-		"artist": "Beatles",
-		"song": "assets/music/holdmyhand.mp3",
-		"image": "assets/images/beatles.jpg"
+		"title":  "Athiests don't have no songs",
+		"artist": "Steve Martin",
+		"song":   "assets/music/Atheists-Dont-Have-No-Songs.mp3",
+		"image":  "assets/images/220px-Rare-bird-alert.jpg"
 	}, {
-		"title": "Satisfaction",
-		"artist": "Rolling Stones",
-		"song": "assets/music/satisfaction.mp3",
-		"image": "assets/images/rollingstones.jpg"
+		"title":  "King Tut",
+		"artist": "Steve Martin",
+		"song":   "assets/music/King-Tut.mp3",
+		"image":  "assets/images/Martin_King_Tut.jpg"
 	}, {
-		"title": "s",
-		"artist": "Rolling Stones",
-		"song": "assets/music/satisfaction.mp3",
-		"image": "assets/images/janisjoplin.jpg"
+		"title":  "Ahab the Arab",
+		"artist": "Ray Stevens",
+		"song":   "assets/music/Ahab-The-Arab.mp3",
+		"image":  "assets/images/R-1391738-1323729300.jpeg"
 	}];
 	var guesses = [];
 	var numguessesallowed = 20;
