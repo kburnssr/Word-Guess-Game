@@ -1,5 +1,6 @@
 (function(){
-	var numwins = 0;
+	var numwin = 0;
+	var numloss = 0;
 	var songs = [{
 		"title":  "Athiests don't have no songs",
 		"artist": "Steve Martin",
@@ -24,9 +25,16 @@
 	//start by pressing any key
 	//display place holders for letters
 	//render the game state
-	function init(){
+	function init(won){
+		songplaying = nextsongtoplay;
+		if(typeof songplaying != "undefined" && won){
+			$("#selection").html(songplaying.title+" <br> "+songplaying.artist);
+		}
 		nextsongtoplay = songs[Math.floor(Math.random()*songs.length)];
+		guesses = [];
 		render();
+		$("#numwin").text(numwin);
+		$("#numloss").text(numloss);
 	}
 	function render(){
 //populate the board
@@ -34,14 +42,17 @@
 		$("#numberofguesses").text(numguessesallowed - guesses.length);
 		$("#lettersalreadyguessed").text(guesses.join(", "));
 		var board = [];
+		var gameoverDude = true;
 		for(var i in nextsongtoplay.artist){
 			if(guesses.indexOf(nextsongtoplay.artist[i]) >= 0){
 				board.push(nextsongtoplay.artist[i]);
 			} else{
 				board.push("_");
+				gameoverDude = false;
 			}
 		}
 		$("#currentword").text(board.join(" "));
+		return gameoverDude;
 
 	}
 	$(document).on("keydown",function(e){
@@ -49,8 +60,15 @@
 			return;
 		}
 //		console.log(e.key);
+		if(guesses.length >= numguessesallowed){
+			numloss = numloss+ 1;
+			init();
+		}
 		guesses.push(e.key);
-		render();
+		if(render()){
+			numwin = numwin+1;
+			init(true);
+		}
 	})
 	init();
 })();

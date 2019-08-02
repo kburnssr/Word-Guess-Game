@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+​
+<head>
+  <meta charset="utf-8">
+  <title>Pausing gifs</title>
+</head>
+​Api-Key = 0o1SOSf8mRtfUcrTSZllUuybBlv4W0jE
+<body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+  $('#search').on('click', function(){
+    event.preventDefault();
+​
+    var num_records = parseInt($('#num_records').val().trim());
+​
+​
+    var search_term = $('#search_term').val().trim();
+    var start_year = $('#start_year').val().trim();
+    var end_year = $('#end_year').val().trim();
+    var page_number = $('#page_number').val().trim();
+​
+    //one way to build this url
+      // var u = `https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=R1a31F4tBjCUaM2ho8GtIFsrSdtXt30M&q=${search_term}&begin_date=${start_year}&end_date=${end_year}&page=${page_number}`;
+​
+    //another way 
+      var urlOb = {
+        "api-key": 'R1a31F4tBjCUaM2ho8GtIFsrSdtXt30M',
+        q: search_term,
+        begin_date: start_year,
+        end_date: end_year,
+        page : page_number
+      }
+​
+      u = "https://api.nytimes.com/svc/search/v2/articlesearch.json?" + $.param(urlOb);
+​
+    $.ajax({
+      url: u,
+      method: 'GET'
+    }).then(function(data){
+      console.log(data.response.docs);
+​
+      var articleObs = data.response.docs;
+      for (var i=0; i<num_records; i++){
+        var li = $('<li>'); //<li></li>
+        
+        var pTitle = $('<p>').text(`Title: ${articleObs[i].headline.main}`);
+        var pWriter = $('<p>').text(`Writer: ${articleObs[i].byline.original}`);
+        var pSection = $('<p>').text(`Section: ${articleObs[i].section_name}`);
+        var pDate = $('<p>').text(`Date: ${articleObs[i].pub_date}`);
+        var pUrl = $('<a>').text(`URL: ${articleObs[i].web_url}`).attr('href', articleObs[i].web_url).attr('target', '_blank');
+​
+        li.append(pTitle,pWriter,pSection,pDate,pUrl);
+        $('#content').append(li);
+      }
+      // title, writer, section, date, url
+      // title: headline.main
+      // writer: byline.original
+      // section: section_name
+      // date: pub_date
+      // url: web_url
+    })
+  });
+</script>
+</body>
+​
+</html>
+​
+​
+​

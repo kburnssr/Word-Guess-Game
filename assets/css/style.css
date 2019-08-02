@@ -2,7 +2,6 @@ html, body{
   background-color: black;
 }
 #background{
-    position: fixed;
     font-family: 'Arial', 'Times New Roman', Helvetica, sans-serif;
     height: 100%;
     width: 100%;
@@ -14,13 +13,9 @@ html, body{
   }
   #selection{
     color: white;
-    position: fixed;
-    height: 50px;
-    width: 700px;
-    font-size: 200%;
-    top: 250px;
+    font-size: 400%;
+    margin-top: 250px;
     text-align: center;
-    left: 300px;
   }
 #box1{
   position: fixed;
