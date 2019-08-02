@@ -1,34 +1,31 @@
 html, body{
   background-color: black;
+  height: 100%;
+  width: 100%;
 }
-#background{
-    font-family: 'Arial', 'Times New Roman', Helvetica, sans-serif;
-    height: 100%;
-    width: 100%;
-    background-image: url(../images/WordGuess.jpg);
-    background-position: center top;  
-    background-repeat: no-repeat;
-    margin: 0px;
-    padding: 0px;
-  }
+body{
+  background-image: url(../images/WordGuess.jpg);
+  background-position: center top;  
+  background-repeat: no-repeat;  
+}
   #selection{
     color: white;
     font-size: 400%;
-    margin-top: 250px;
+    padding-top: 250px;
     text-align: center;
   }
 #box1{
-  position: fixed;
+  position: absolute;
   height: 700px;
   width: 255px;
   border-width: 2px;
   border-style: dashed;
   border-color: white;
-  margin-top: 350px;
+  top: 350px;
   right: 55%;
 }
 #box2{
-  position: fixed;
+  position: absolute;
   height: 600px;
   width: 450px;
   border-width: 2px;
@@ -36,7 +33,7 @@ html, body{
   border-color: white;
   color: white;
   padding: 50px;
-  margin-top: 350px;
+  top: 350px;
   right: 35%;
   text-align: center;
   font-size: 200%;

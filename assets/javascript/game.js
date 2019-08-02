@@ -28,7 +28,7 @@
 	function init(won){
 		songplaying = nextsongtoplay;
 		if(typeof songplaying != "undefined" && won){
-			$("#selection").html(songplaying.title+" <br> "+songplaying.artist);
+			$("#selection").html(songplaying.title+" - "+songplaying.artist);
 		}
 		nextsongtoplay = songs[Math.floor(Math.random()*songs.length)];
 		guesses = [];
