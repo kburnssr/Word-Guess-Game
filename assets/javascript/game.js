@@ -10,12 +10,14 @@
 		"title":  "King Tut",
 		"artist": "Steve Martin",
 		"song":   "assets/music/King-Tut.mp3",
-		"image":  "assets/images/Martin_King_Tut.jpg"
+//		"image":  "assets/images/Martin_King_Tut.jpg"
+		"image":  "assets/images/Martin_King_Tut_220px.jpg"
 	}, {
 		"title":  "Ahab the Arab",
 		"artist": "Ray Stevens",
 		"song":   "assets/music/Ahab-The-Arab.mp3",
-		"image":  "assets/images/R-1391738-1323729300.jpeg"
+//		"image":  "assets/images/R-1391738-1323729300.jpeg"
+		"image":  "assets/images/R-1391738-1323729300_220px.jpg"
 	}];
 	var guesses = [];
 	var numguessesallowed = 20;
@@ -29,6 +31,7 @@
 		songplaying = nextsongtoplay;
 		if(typeof songplaying != "undefined" && won){
 			$("#selection").html(songplaying.title+" - "+songplaying.artist);
+			$("#box1").html(songplaying.image+" - "+songplaying.song);
 		}
 		nextsongtoplay = songs[Math.floor(Math.random()*songs.length)];
 		guesses = [];
