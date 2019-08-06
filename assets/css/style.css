@@ -7,39 +7,45 @@ body{
   background-image: url(../images/WordGuess.jpg);
   background-position: center top;  
   background-repeat: no-repeat;  
+  background-size: 50%;
 }
   #selection{
     color: white;
-    font-size: 400%;
-    padding-top: 250px;
+    font-size: 200%;
+    padding-top: 150px;
     text-align: center;
   }
 #box1{
   position: absolute;
+  margin-left: -220px;
   height: 700px;
-  width: 255px;
+  width: 220px;
   border-width: 2px;
   border-style: dashed;
   border-color: white;
-  top: 350px;
-  right: 55%;
+  top: 200px;
+  right: 50%;
 }
 #box1 img{
-  width: 255px;
+  width: 220px;
+}
+#box1 audio{
+  width: 220px;
 }
 #box2{
   position: absolute;
+  margin-right: -300px;
   height: 600px;
-  width: 450px;
+  width: 300px;
   border-width: 2px;
   border-style: dashed;
   border-color: white;
   color: white;
-  padding: 50px;
-  top: 350px;
-  right: 35%;
+  padding: 50px 0;
+  top: 200px;
+  right: 50%;
   text-align: center;
-  font-size: 200%;
+  font-size: 100%;
 }
 #wins{
   padding: 20px;

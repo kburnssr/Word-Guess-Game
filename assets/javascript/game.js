@@ -60,6 +60,7 @@
 
 	}
 	$(document).on("keydown",function(e){
+		e.preventDefault();
 		if(guesses.indexOf(e.key) >= 0){
 			return;
 		}
