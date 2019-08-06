@@ -31,7 +31,8 @@
 		songplaying = nextsongtoplay;
 		if(typeof songplaying != "undefined" && won){
 			$("#selection").html(songplaying.title+" - "+songplaying.artist);
-			$("#box1").html(songplaying.image+" - "+songplaying.song);
+			$("#box1").html("<img src='"+songplaying.image+"'/>"+
+				"<audio src='"+songplaying.song+"' controls autoplay/audio>");
 		}
 		nextsongtoplay = songs[Math.floor(Math.random()*songs.length)];
 		guesses = [];

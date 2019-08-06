@@ -24,6 +24,9 @@ body{
   top: 350px;
   right: 55%;
 }
+#box1 img{
+  width: 255px;
+}
 #box2{
   position: absolute;
   height: 600px;
